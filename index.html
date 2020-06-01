@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Android Calc</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div id="container">
+
+		<div id="top">
+			<div id="top-bar">
+				<span>DEG</span>
+				<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
+			</div>
+
+			<div id="display">
+				<div id="display-calc">
+					<div id="display-equation"></div>
+					<div id="display-result"></div>
+				</div>
+				<div id="display-footer">
+					<span id="display-footer-bar"></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="keyboard">
+			<div id="numbers">
+				<span onclick="insertInEquation(7, event)">7</span>
+				<span onclick="insertInEquation(8, event)">8</span>
+				<span onclick="insertInEquation(9, event)">9</span>
+				<span onclick="insertInEquation(4, event)">4</span>
+				<span onclick="insertInEquation(5, event)">5</span>
+				<span onclick="insertInEquation(6, event)">6</span>
+				<span onclick="insertInEquation(1, event)">1</span>
+				<span onclick="insertInEquation(2, event)">2</span>
+				<span onclick="insertInEquation(3, event)">3</span>
+				<span onclick="insertInEquation(0, event)">0</span>
+				<span onclick="insertInEquation('.', event)">.</span>
+				<span onclick="finishCalc('=', event)">=</span>
+			</div>
+
+			<div id="operations">
+				<span onclick="backspaceAndReset(event)">
+					<svg id='backspace' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"/></svg>
+					<span id="reset">C</span>
+				</span>
+				<span onclick="insertInEquation('÷', event)">÷</span>
+				<span onclick="insertInEquation('x', event)">x</span>
+				<span onclick="insertInEquation('-', event)">-</span>
+				<span onclick="insertInEquation('+', event)">+</span>
+			</div>
+
+			<div id="more-operations">
+				<div id="more-operations-slider"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
+			</div>
+		
+			<span id='ripple'></span>
+		</div>
+
+	</div>
+
+	<script src='calc.js'></script>
+</body>
+</html>
